@@ -63,13 +63,13 @@
         justify-content: center;
         height: 83px;
 
-        & .form-label {
+        & label {
           font-size: 13px;
           font-weight: 500;
           margin-top: 8px;
         }
 
-        & .form-input {
+        & input {
           flex: 1;
           background-color: #fff;
           border-width: 1px;

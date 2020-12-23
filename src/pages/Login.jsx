@@ -1,6 +1,8 @@
 import { useLazyQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { LOGIN_USER } from "../graphql/loginQuery.js";
+import { Link } from "react-router-dom";
+import { useAuthDispatch } from "../context/auth";
 
 const Login = (props) => {
   const [variables, setVariables] = useState({
@@ -10,12 +12,14 @@ const Login = (props) => {
 
   const [errors, setErrors] = useState({});
 
+  const dispatch = useAuthDispatch();
+
   const [loginUser, { loading }] = useLazyQuery(LOGIN_USER, {
     onError: (err) => {
       setErrors(err.graphQLErrors[0].extensions.errors);
     },
     onCompleted(data) {
-      localStorage.setItem("token", data.login.token);
+      dispatch({ type: "LOGIN", payload: data.login });
       props.history.push("/");
     },
   });
@@ -44,7 +48,7 @@ const Login = (props) => {
     <div className='form-container'>
       <h1>登录您的账户</h1>
       <p>
-        还没有账户？点击<a href='/register'>这里</a>创建账户
+        还没有账户？点击<Link to='/register'>这里</Link>创建账户
       </p>
       <div className='form-col'>
         <form className='sign-form' onSubmit={submitLogin}>

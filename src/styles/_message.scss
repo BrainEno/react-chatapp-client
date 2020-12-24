@@ -1,0 +1,51 @@
+.msg-container {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  height: max-content;
+  align-items: center;
+  background-color: white;
+
+  .my-msg {
+    background-color: rgb(10, 132, 255);
+    padding: 10px 15px;
+    border-radius: 25px;
+    height: max-content;
+
+    & p {
+      color: white;
+    }
+  }
+
+  .other-msg {
+    background-color: rgb(199, 199, 204);
+    padding: 10px 15px;
+    border-radius: 25px;
+    height: max-content;
+
+    & p {
+      color: #444;
+    }
+  }
+  .time-stamp {
+    font-size: 8px;
+    margin-left: 8px;
+    color: rgb(189, 187, 187);
+  }
+}
+
+@media (max-width: 900px) {
+  .msg-container {
+    & .time-stamp {
+      display: none;
+    }
+
+    .my-msg {
+      border-radius: 10px;
+    }
+
+    .other-msg {
+      border-radius: 10px;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { GET_MESSAGES } from "../../graphql/getMessagesQuery";
 import { useMessageDispatch, useMessageState } from "../../context/message";
+import Message from "../../components/Message";
 
 export const Messages = () => {
   const dispatch = useMessageDispatch();
@@ -39,7 +40,7 @@ export const Messages = () => {
     selectedChatMarkup = <p>正在加载...</p>;
   } else if (messages.length > 0) {
     selectedChatMarkup = messages.map((message) => (
-      <p key={message.uuid}>{message.content}</p>
+      <Message key={message.uuid} message={message} />
     ));
   } else if (messages.length === 0) {
     selectedChatMarkup = <p>会话已连接！向TA发送消息</p>;

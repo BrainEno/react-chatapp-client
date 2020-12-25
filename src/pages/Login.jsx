@@ -4,7 +4,7 @@ import { LOGIN_USER } from "../graphql/loginQuery.js";
 import { Link } from "react-router-dom";
 import { useAuthDispatch } from "../context/auth";
 
-const Login = (props) => {
+const Login = () => {
   const [variables, setVariables] = useState({
     email: "",
     password: "",
@@ -20,7 +20,7 @@ const Login = (props) => {
     },
     onCompleted(data) {
       dispatch({ type: "LOGIN", payload: data.login });
-      props.history.push("/");
+      window.location.href = "/";
     },
   });
 

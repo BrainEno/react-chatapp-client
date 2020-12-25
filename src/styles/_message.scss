@@ -8,8 +8,26 @@
   .my-msg {
     background-color: rgb(10, 132, 255);
     padding: 10px 15px;
-    border-radius: 25px;
+    border-radius: 5px;
     height: max-content;
+    border-bottom-color: rgb(10, 132, 255);
+    position: relative;
+    max-width: 400px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      right: -4px;
+      width: 10px;
+      height: 10px;
+      margin-top: -10px;
+      transform: rotate(45deg);
+      background-color: inherit;
+    }
 
     & p {
       color: white;
@@ -19,8 +37,26 @@
   .other-msg {
     background-color: rgb(199, 199, 204);
     padding: 10px 15px;
-    border-radius: 25px;
+    border-radius: 5px;
     height: max-content;
+    position: relative;
+    border-bottom-color: rgb(199, 199, 204);
+    max-width: 400px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: -4px;
+      width: 10px;
+      height: 10px;
+      margin-top: -10px;
+      transform: rotate(45deg);
+      background-color: inherit;
+    }
 
     & p {
       color: #444;
@@ -40,11 +76,11 @@
     }
 
     .my-msg {
-      border-radius: 10px;
+      border-radius: 5px;
     }
 
     .other-msg {
-      border-radius: 10px;
+      border-radius: 5px;
     }
   }
 }

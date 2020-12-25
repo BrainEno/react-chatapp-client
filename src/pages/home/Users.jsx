@@ -37,7 +37,9 @@ export const Users = () => {
           <div>
             <p className='username'>{user.username}</p>
             <p className='user-message'>
-              {user.latestMessage ? user.latestMessage.content : "暂无消息"}
+              {user.latestMessage
+                ? user.latestMessage.content.slice(0, 20)
+                : "暂无消息"}
             </p>
           </div>
         </div>

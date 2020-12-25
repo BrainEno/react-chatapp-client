@@ -6,15 +6,17 @@ import zhLocale from "date-fns/locale/zh-CN";
 const Message = ({ message }) => {
   const { user } = useAuthState();
   const sent = message.from === user.username;
-  const recived = !sent;
 
   return (
     <div
       className='msg-container'
-      style={{ justifyContent: sent ? "flex-end" : "flex-start" }}>
+      style={{
+        justifyContent: sent ? "flex-end" : "flex-start",
+      }}>
       <div className={sent ? "my-msg" : "other-msg"}>
         <p key={message.key}>{message.content}</p>
       </div>
+
       <small className='time-stamp'>
         {isToday(parseISO(message.createdAt, { locale: zhLocale }))
           ? format(parseISO(message.createdAt), "bb hh:mm", {

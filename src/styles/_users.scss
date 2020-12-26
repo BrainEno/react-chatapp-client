@@ -1,0 +1,155 @@
+.user-list {
+  height: 550px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.message-left {
+  border-right: 1px solid rgb(211, 211, 211);
+
+  .left-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d0e9ea;
+
+    .user-header {
+      border-bottom: rgb(211, 211, 211) 1px solid;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 92px;
+
+      & img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        background-color: #999999;
+        border-radius: 50px;
+        margin-right: 2rem;
+        margin: 20px 30px;
+      }
+
+      .username {
+        font-size: 20px;
+        margin-right: 20px;
+        font-weight: 600px;
+        letter-spacing: 1px;
+      }
+
+      .user-status {
+        color: #1db954;
+        font-size: 16px;
+        margin-right: 120px;
+      }
+
+      button {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        padding: 0;
+        border: none;
+        margin-right: 20px;
+        outline: none;
+        background-color: inherit;
+
+        & .fas {
+          font-size: 20px;
+          color: rgb(165, 160, 160);
+
+          &:hover {
+            color: #cb1582;
+          }
+          cursor: pointer;
+        }
+      }
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: row;
+      background-color: #edf8f5;
+      height: 80px;
+      padding: 20px 30px;
+
+      input {
+        flex: 1;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        padding: 15px 8px;
+
+        &:focus {
+          border: rgb(124, 122, 122) 2px solid;
+        }
+      }
+
+      & button {
+        border: none;
+        background-color: inherit;
+        margin-left: 15px;
+
+        & .fas {
+          font-size: 20px;
+          color: #444;
+
+          &:hover {
+            color: #cb1582;
+          }
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 435px;
+    padding: 18px 25px;
+
+    &:hover {
+      background-color: rgb(250, 250, 250);
+    }
+
+    img {
+      width: 45px;
+      height: 45px;
+      object-fit: cover;
+      background-color: #999999;
+      border-radius: 50px;
+      margin-right: 2rem;
+    }
+
+    div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .username {
+        color: #1db954;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 6px;
+        cursor: pointer;
+      }
+
+      .user-message {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 14px;
+        color: #8e9297;
+        cursor: pointer;
+      }
+    }
+  }
+}

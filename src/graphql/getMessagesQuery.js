@@ -8,6 +8,10 @@ export const GET_MESSAGES = gql`
       from
       content
       createdAt
+      reactions {
+        uuid
+        content
+      }
     }
   }
 `;

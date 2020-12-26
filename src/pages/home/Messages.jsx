@@ -62,18 +62,31 @@ export const Messages = () => {
   }
 
   return (
-    <div className='message-right'>
+    <div className='messages-right'>
+      <div className='right-header'>
+        {selectedUser && (
+          <p>
+            正在与 <span>{selectedUser.username}</span> 会话
+          </p>
+        )}
+      </div>
       <div className='msg-box'>{selectedChatMarkup}</div>
 
       <div className='msg-input'>
         <form onSubmit={submitMessage} className='send-msg'>
+          <button className='fa-btn'>
+            <i className='far fa-smile'></i>
+          </button>
           <input
             type='text'
             placeholder='输入消息...'
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          <button type='submit'>发送</button>
+
+          <button type='submit' className='text-btn'>
+            发送
+          </button>
         </form>
       </div>
     </div>

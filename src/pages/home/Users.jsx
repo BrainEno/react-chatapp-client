@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_USERS } from "../../graphql/getUsersQuery";
 import { useMessageState, useMessageDispatch } from "../../context/message";
+import UserAvatar from "../../components/UserAvatar";
 
 export const Users = () => {
   const dispatch = useMessageDispatch();
@@ -46,5 +47,10 @@ export const Users = () => {
       );
     });
   }
-  return <div className='message-left'>{usersMarkup}</div>;
+  return (
+    <div className='message-left'>
+      <UserAvatar />
+      <div className='user-list'>{usersMarkup}</div>
+    </div>
+  );
 };

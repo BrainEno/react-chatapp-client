@@ -1,0 +1,108 @@
+.messages-right {
+  border-left: #f8f9fa 1px solid;
+  background-color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .right-header {
+    height: 92px;
+    background-color: #d0e9ea;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #777;
+
+      span {
+        color: #444;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .msg-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & .tip-text {
+      text-align: center;
+      justify-self: flex-end;
+      margin-bottom: 50%;
+    }
+  }
+
+  .msg-input {
+    height: 65px;
+    background-color: #edf8f5;
+    form {
+      width: 100%;
+      height: 100%;
+      padding: 15px 20px;
+      display: flex;
+      flex-direction: row;
+
+      input {
+        flex: 1;
+        border: none;
+        background-color: white;
+        border-radius: 50px;
+        padding-left: 20px;
+
+        &:focus {
+          outline: none;
+          border: 1px solid #1f312e;
+        }
+      }
+
+      .fa-btn {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        padding: 0;
+        border: none;
+        margin-right: 20px;
+        outline: none;
+
+        & .fa-smile {
+          font-size: 30px;
+          color: rgb(165, 160, 160);
+
+          &:hover {
+            color: #cb1582;
+          }
+          cursor: pointer;
+        }
+      }
+
+      .text-btn {
+        background-color: #cb1582;
+        color: white;
+        width: 100px;
+        margin-left: 30px;
+        border: none;
+        border-radius: 25px;
+        outline: none;
+
+        &:hover {
+          background-color: #d850a1;
+          color: #a5ffef;
+        }
+      }
+    }
+  }
+}

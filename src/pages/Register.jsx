@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { REGISTER_USER } from "../graphql/registerMutation.js";
+import { Link } from "react-router-dom";
 
 const Register = (props) => {
   const [variables, setVariables] = useState({
@@ -49,7 +50,7 @@ const Register = (props) => {
     <div className='form-container'>
       <h1>创建一个新账户</h1>
       <p>
-        已经有账户了？点击<a href='/login'>这里</a>登录
+        已经有账户了？点击<Link to='/login'>这里</Link>登录
       </p>
       <div className='form-col'>
         <form className='sign-form' onSubmit={submitRegister}>

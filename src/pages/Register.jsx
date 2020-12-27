@@ -14,7 +14,11 @@ const Register = (props) => {
 
   const [registerUser, { loading }] = useMutation(REGISTER_USER, {
     update: (_, __) => props.history.push("/login"),
-    onError: (err) => setErrors(err.graphQLErrors[0].extensions.errors),
+    onError: (err) => {
+      console.log(err);
+      // setErrors(err.graphQLErrors[0].extensions.errors)
+      setErrors(err);
+    },
   });
 
   const { email, username, password, confirmPassword } = variables;

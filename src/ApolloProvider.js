@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,8 +11,11 @@ import { setContext } from "@apollo/client/link/context";
 import { WebSocketLink } from "@apollo/client/link/ws";
 import { getMainDefinition } from "@apollo/client/utilities";
 
+const HTTP_LINK = process.env.REACT_APP_HTTP_LINK;
+const WS_LINK = process.env.REACT_APP_WS_LINK;
+
 let httpLink = createHttpLink({
-  uri: "http://localhost:4000",
+  uri: HTTP_LINK,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -28,7 +32,7 @@ const authLink = setContext((_, { headers }) => {
 httpLink = authLink.concat(httpLink);
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000/graphql`,
+  uri: WS_LINK,
   options: {
     reconnect: true,
     connectionParams: {

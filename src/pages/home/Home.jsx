@@ -31,6 +31,7 @@ const Home = () => {
         },
       });
     }
+    // eslint-disable-next-line
   }, [messageData, messageError]);
 
   const logout = () => {

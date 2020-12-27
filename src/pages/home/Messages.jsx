@@ -25,6 +25,7 @@ export const Messages = () => {
     if (selectedUser && !selectedUser.messages) {
       getMessages({ variables: { from: selectedUser.username } });
     }
+    // eslint-disable-next-line
   }, [selectedUser]);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export const Messages = () => {
         },
       });
     }
+    // eslint-disable-next-line
   }, [messagesData]);
 
   const submitMessage = (e) => {

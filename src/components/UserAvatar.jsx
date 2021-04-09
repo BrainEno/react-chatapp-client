@@ -10,16 +10,16 @@ const UserAvatar = () => {
         <p className='username'>{user.username}</p>
         <p className='user-status'>正在线上</p>
         <button>
-          <i class='fas fa-sync-alt'></i>
+          <i className='fas fa-sync-alt'></i>
         </button>
         <button>
-          <i class='fas fa-ellipsis-v'></i>
+          <i className='fas fa-ellipsis-v'></i>
         </button>
       </div>
       <div className='search-container'>
         <input type='text' />
         <button>
-          <i class='fas fa-search'></i>
+          <i className='fas fa-search'></i>
         </button>
       </div>
     </div>
